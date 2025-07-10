@@ -3,6 +3,26 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 
+const Header = (props) => {
+  return(
+    <h1>{props.title}</h1>
+  )
+}
+
+const Contents = (props) => {
+  return(
+    <p>
+      {props.part} {props.exercises}
+    </p>
+  )
+}
+
+const Total = (props) => {
+  return(
+    <p>Number of exercises {props.a + props.b + props.c}</p>
+  )
+}
+
 function App() {
   const [count, setCount] = useState(0)
 
@@ -37,17 +57,11 @@ function App() {
         Click on the Vite and React logos to learn more
       </p>
       <div>
-        <h1>{course}</h1>
-        <p>
-          {part1} {exercises1}
-        </p>
-        <p>
-          {part2} {exercises2}
-        </p>
-        <p>
-          {part3} {exercises3}
-        </p>
-        <p>Number of exercises {exercises1+exercises2+exercises3}</p>
+        <Header title={course} />
+        <Contents part={part1} exercises={exercises1}/>
+        <Contents part={part2} exercises={exercises2}/>
+        <Contents part={part3} exercises={exercises3}/>
+        <Total a={exercises1} b={exercises2} c={exercises3}/>
       </div>
     </>
   )
