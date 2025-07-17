@@ -10,20 +10,7 @@ function App() {
   const [neutral, setNeutral] = useState(0)
   const [bad, setBad] = useState(0)
   const [allReviews, setAll] = useState(0)
-
-  const handleGood = () => {
-    setGood(good+1)
-    setAll(allReviews+1)
-  }
-  const handleNeutral = () => {
-    setNeutral(neutral+1)
-    setAll(allReviews+1)
-  }
-  const handleBad = () => {
-    setBad(bad+1)
-    setAll(allReviews+1)
-  }
-
+  
   return (
     <>
       <div>
@@ -52,9 +39,9 @@ function App() {
           <p>Neutral Reviews: {neutral}</p> 
           <p>Bad Reviews: {bad}</p>
           <p>
-            <button onClick={handleGood}>Good</button>
-            <button onClick={handleNeutral}>Neutral</button>
-            <button onClick={handleBad}>Bad</button>
+            <button onClick={() => {setGood(good+1)}}>Good</button>
+            <button onClick={() => {setNeutral(neutral+1)}>Neutral</button>
+            <button onClick={() => {setBad(bad+1)}>Bad</button>
           </p>
       </div>
     </>
